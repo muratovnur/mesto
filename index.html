@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+
+  <main class="content">
+    <section class="profile">
+      <img src="./images/avatar.png" alt="Аватар профиля" class="profile__avatar">
+      <div class="profile__info">
+        <div class="profile__name-wrapper">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <div class="profile__edit-btn"></div>
+        </div>
+        <p class="profile__about-self">Исследователь океана</p>
+      </div>
+      <div class="profile__add-btn"></div>
+    </section>
+
+    <section class="elements">
+      <div class="element">
+        <img src="./images/elements-lions.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Львы</h2>
+          <div class="element__like"></div>
+        </div>
+        
+      </div>
+
+      <div class="element">
+        <img src="./images/elements-blue-mountain.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Синяя гора</h2>
+          <div class="element__like"></div>
+        </div>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements-desert.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Пустыня</h2>
+          <div class="element__like"></div>
+        </div>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements-pole.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Поле</h2>
+          <div class="element__like"></div>
+        </div>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements-zakat-gory.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Гора</h2>
+          <div class="element__like"></div>
+        </div>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements-most.jpg" alt="" class="element__image">
+        <div class="element__title-wrapper">
+          <h2 class="element__title">Мост "Золотой Ключ"</h2>
+          <div class="element__like"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">&COPY; 2022 Mesto Russia</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <form class="form">
+        <h2 class="form__title">Редактировать профиль</h2>
+        <input type="text" class="form__input form__input_field_name">
+        <input type="text" class="form__input form__input_field_about-self">
+        <input type="submit" class="form__submit" value="Сохранить">
+        <div class="form__close-btn"></div>
+      </form>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

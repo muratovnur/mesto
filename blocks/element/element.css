@@ -1,0 +1,17 @@
+.element {
+  width: 100%;
+  display: grid;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 0;
+}
+
+.element::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
