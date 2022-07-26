@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 424px) {
-  .profile__name {
+  .profile__about-self {
     font-size: 14px;
     line-height: 17px;
   }

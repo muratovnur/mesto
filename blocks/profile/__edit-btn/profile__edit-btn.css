@@ -1,15 +1,21 @@
 .profile__edit-btn {
+  padding: 0;
   width: 24px;
   height: 24px;
   min-width: 24px;
   min-height: 24px;
   margin-left: 18px;
   background-image: url("../../../images/edit-button.svg");
-  background-size: contain;
+  background-size: 10px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 1px solid #fff;
+  outline: 0;
+  cursor: pointer;
 }
 
 .profile__edit-btn:hover {
-  cursor: pointer;
   opacity: 0.6;
 }
 
@@ -20,5 +26,6 @@
     min-width: 18px;
     min-height: 18px;
     margin-left: 10px;
+    background-size: 7.5px 7.5px;
   }
 }

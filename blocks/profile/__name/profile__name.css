@@ -13,6 +13,7 @@
   .profile__name {
     font-size: 36px;
     margin: 0 0 14px;
+    margin-left: 32px;
   }
 }
 
@@ -20,5 +21,6 @@
   .profile__name {
     font-size: 27px;
     line-height: 33px;
+    margin-left: 28px;
   }
 }
