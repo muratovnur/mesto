@@ -25,7 +25,7 @@
 @media screen and (max-width: 767px) {
   .elements {
     padding: 36px 80px 0;
-    grid-template-columns: minmax(0, 1fr);    
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 0;
     row-gap: 40px;
   }
