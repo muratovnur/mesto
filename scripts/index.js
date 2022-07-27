@@ -4,8 +4,8 @@ let popupElement = document.querySelector('.popup');
 let formElement = document.querySelector('.form');
 let nameInput = document.querySelector('.form__input_field_name');
 let jobInput = document.querySelector('.form__input_field_about-self');
-let name = document.querySelector('.profile__name');
-let job = document.querySelector('.profile__about-self');
+let profileName = document.querySelector('.profile__name');
+let profileJob = document.querySelector('.profile__about-self');
 
 function togglePopUp() {
   popupElement.classList.toggle('popup_opened');
@@ -14,8 +14,8 @@ function togglePopUp() {
 function formSubmitHandler(evt) {
   evt.preventDefault();
 
-  name.textContent = nameInput.value;
-  job.textContent = jobInput.value;
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
 
   togglePopUp();
 }
@@ -23,8 +23,8 @@ function formSubmitHandler(evt) {
 editButton.addEventListener('click', function () {
   togglePopUp();
 
-  nameInput.value = name.textContent;
-  jobInput.value = job.textContent;
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
 });
 
 closeButton.addEventListener('click', togglePopUp);
