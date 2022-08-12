@@ -25,71 +25,55 @@
     </section>
 
     <section class="elements">
-      <div class="element">
-        <img src="./images/elements-lions.jpg" alt="львёнок ласкается с львом" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Лев и львёнок</h2>
-          <button type="button" class="element__like"></button>
+      <template id="card">
+        <div class="element">
+          <img class="element__image">
+          <button type="button" class="element__trash"></button>
+          <div class="element__title-wrapper">
+            <h2 class="element__title"></h2>
+            <button type="button" class="element__like"></button>
+          </div>
         </div>
-        
-      </div>
-
-      <div class="element">
-        <img src="./images/elements-blue-mountain.jpg" alt="утёс на море на фоне туного неба" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Синий утёс</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements-desert.jpg" alt="гладкие песчанные холмы в пустыне" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Пустыня</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements-pole.jpg" alt="лесные холмы окутанные густым туманом на фоне раннего жёлтого заката" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Туманнные Холмы</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements-zakat-gory.jpg" alt="острые снежные вершины горы на фоне персикового заката" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Вершина Горы</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements-most.jpg" alt="мост 'Золотые Ворота' на фоне ночного города" class="element__image">
-        <div class="element__title-wrapper">
-          <h2 class="element__title">Мост "Золотые Ворота"</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </div>
+      </template>
     </section>
   </main>
 
   <footer class="footer">
     <p class="footer__copyright">&COPY; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+
+  <div class="popup popup_type_edit-profile">
     <div class="popup__container">
-      <form name="form-edit-profile" class="form">
+      <form name="form-edit-profile" class="form form_type_edit-profile">
         <h2 class="form__title">Редактировать профиль</h2>
-        <input type="text" name="input-name" class="form__input form__input_field_name" placeholder="Введите ваше имя" required autofocus>
-        <input type="text" name="input-about-self" class="form__input form__input_field_about-self" placeholder="Введите информацию о себе" required>
+        <input type="text" name="input-profile-name" class="form__input form__input_field_profile-name" placeholder="Введите ваше имя" required autofocus>
+        <input type="text" name="input-profile-about-self" class="form__input form__input_field_profile-about-self" placeholder="Введите информацию о себе" required>
         <input type="submit" class="form__submit" value="Сохранить">
       </form>
-      <button type="button" class="popup__close-btn"></button>
+      <button type="button" class="popup__close-btn popup__close-btn_form_edit-profile"></button>
     </div>
   </div>
+
+  <div class="popup popup_type_add-card">
+    <div class="popup__container">
+      <form name="form-add-card" class="form form_type_add-card">
+        <h2 class="form__title">Новое место</h2>
+        <input type="text" name="input-card-name" class="form__input form__input_field_card-name" placeholder="Название" required autofocus>
+        <input type="text" name="input-card-link" class="form__input form__input_field_card-link" placeholder="Ссылка на картинку" required>
+        <input type="submit" class="form__submit" value="Создать">
+      </form>
+      <button type="button" class="popup__close-btn popup__close-btn_form_add-card"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_inspect-image">
+    <div class="popup__image-container">
+      <img class="popup__image" src="" alt="">
+      <h2 class="popup__subtitle"></h2>
+      <button type="button" class="popup__close-btn popup__close-btn_inspect-image"></button>
+    </div>
+  </div>
+
   <script src="./scripts/index.js"></script>
 </body>
 </html>

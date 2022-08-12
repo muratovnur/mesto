@@ -20,6 +20,10 @@
   outline: 0;
 }
 
+.form__input::placeholder {
+  color: #c4c4c4;
+}
+
 @media screen and (max-width: 767px) {
   .form__input {
     width: 238px;
