@@ -17,11 +17,11 @@
       <div class="profile__info">
         <div class="profile__name-wrapper">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-btn"></button>
+          <button type="button" class="profile__button profile__edit-btn"></button>
         </div>
         <p class="profile__about-self">Исследователь океана</p>
       </div>
-      <button type="button" class="profile__add-btn"></button>
+      <button type="button" class="profile__button profile__add-btn"></button>
     </section>
 
     <section class="elements">
@@ -44,10 +44,16 @@
 
   <div class="popup popup_type_edit-profile">
     <div class="popup__container">
-      <form name="form-edit-profile" class="form form_type_edit-profile">
+      <form name="form-edit-profile" class="form form_type_edit-profile" novalidate>
         <h2 class="form__title">Редактировать профиль</h2>
-        <input type="text" name="input-profile-name" class="form__input form__input_field_profile-name" placeholder="Введите ваше имя" required autofocus>
-        <input type="text" name="input-profile-about-self" class="form__input form__input_field_profile-about-self" placeholder="Введите информацию о себе" required>
+        <label class="form__field">
+          <input id="profile-name-input" type="text" name="input-profile-name" class="form__input form__input_field_profile-name" placeholder="Введите ваше имя" minlength="2" maxlength="40" required autofocus>
+          <span class="profile-name-input-error form__input-error"></span>
+        </label>
+        <label class="form__field">
+          <input id="profile-about-self-input" type="text" name="input-profile-about-self" class="form__input form__input_field_profile-about-self" placeholder="Введите информацию о себе" minlength="2" maxlength="200" required>
+          <span class="profile-about-self-input-error form__input-error"></span>
+        </label>
         <input type="submit" class="form__submit" value="Сохранить">
       </form>
       <button type="button" class="popup__close-btn popup__close-btn_form_edit-profile"></button>
@@ -56,17 +62,23 @@
 
   <div class="popup popup_type_add-card">
     <div class="popup__container">
-      <form name="form-add-card" class="form form_type_add-card">
+      <form name="form-add-card" class="form form_type_add-card" novalidate>
         <h2 class="form__title">Новое место</h2>
-        <input type="text" name="input-card-name" class="form__input form__input_field_card-name" placeholder="Название" required autofocus>
-        <input type="text" name="input-card-link" class="form__input form__input_field_card-link" placeholder="Ссылка на картинку" required>
+        <label class="form__field">
+          <input id="card-name-input" type="text" name="input-card-name" class="form__input form__input_field_card-name" placeholder="Название" minlength="2" maxlength="30" required autofocus>
+          <span class="card-name-input-error form__input-error"></span>
+        </label>
+        <label class="form__field">
+          <input id="card-image-link-input" type="url" name="input-card-link" class="form__input form__input_field_card-link" placeholder="Ссылка на картинку" required>
+          <span class="card-image-link-input-error form__input-error"></span>
+        </label>
         <input type="submit" class="form__submit" value="Создать">
       </form>
       <button type="button" class="popup__close-btn popup__close-btn_form_add-card"></button>
     </div>
   </div>
 
-  <div class="popup popup_type_inspect-image">
+  <div class="popup popup_type_inspect-image" tabindex="0">
     <div class="popup__image-container">
       <img class="popup__image">
       <h2 class="popup__subtitle"></h2>
@@ -76,5 +88,6 @@
 
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validity.js"></script>
 </body>
 </html>
