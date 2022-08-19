@@ -21,18 +21,18 @@ function setEventListeners(form, validationConfig) {
   const formInputList = Array.from(form.querySelectorAll(`${validationConfig.inputSelector}`));
   const buttonSubmitElement = form.querySelector(`${validationConfig.buttonSubmitSelector}`);
 
-  buttonSubmitToggle(formInputList, buttonSubmitElement, validationConfig.inactiveButtonClass);
+  toggleButtonSubmit(formInputList, buttonSubmitElement, validationConfig.inactiveButtonClass);
 
   formInputList.forEach(function (formInputElement) {
     formInputElement.addEventListener('input', function () {
       checkInputValidity(form, formInputElement, validationConfig.inputErrorClass, validationConfig.errorClass);
-      buttonSubmitToggle(formInputList, buttonSubmitElement, validationConfig.inactiveButtonClass);
+      toggleButtonSubmit(formInputList, buttonSubmitElement, validationConfig.inactiveButtonClass);
     })
   })
 }
 
 
-function buttonSubmitToggle (formInputList, buttonSubmitElement, inactiveButtonClass) {
+function toggleButtonSubmit (formInputList, buttonSubmitElement, inactiveButtonClass) {
   if(hasInvalidInput(formInputList)) {
     buttonSubmitElement.classList.add(`${inactiveButtonClass}`);
     buttonSubmitElement.setAttribute('disabled', 'disabled');
@@ -82,7 +82,8 @@ function resetFormValidation(form, validationConfig) {
   formInputList.forEach(function (formInputElement) {
     hideErrorMessage(form, formInputElement, validationConfig.inputErrorClass, validationConfig.errorClass);
   })
-  buttonSubmitToggle(formInputList, buttonSubmitElement, validationConfig.inactiveButtonClass);
+  buttonSubmitElement.classList.add(`${validationConfig.inactiveButtonClass}`);
+  buttonSubmitElement.setAttribute('disabled', 'disabled');
 }
 
 
