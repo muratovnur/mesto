@@ -33,21 +33,18 @@ const formAddCardValidator = new FormValidator(validationConfig, formAddCard);
 const formEditProfileValidator = new FormValidator(validationConfig, formEditProfile);
 
 
-function loadCards() {
-  initialCards.forEach(function (cardItem) {
-    const card = new Card(cardItem.name, cardItem.link, '#card');
-    const cardElement = card.generateCard();
+function createCard(cardName, cardLink) {
+  const card = new Card(cardName, cardLink, '#card');
 
-    cardElements.append(cardElement);
-  })
+  return card.generateCard();
 }
 
+function loadCards() {
+  initialCards.forEach((cardItem) => cardElements.append(createCard(cardItem.name, cardItem.link)));
+}
 
 function addCard(cardName, cardLink) {
-  const card = new Card(cardName, cardLink, '#card');
-  const cardElement = card.generateCard();
-
-  cardElements.prepend(cardElement);
+  cardElements.prepend(createCard(cardName, cardLink));
 }
 
 
@@ -76,20 +73,17 @@ function closePopup(popup) {
 }
 
 
-function openEditProfilePopup() {
-  const popupForm = popupEditProfile.querySelector(`${validationConfig.formSelector}`);
-  
+function openEditProfilePopup() {  
   profileNameInput.value = profileName.textContent;
   profileAboutSelfInput.value = profileAboutSelf.textContent;
+  
   formEditProfileValidator.resetFormValidation();
   
   openPopup(popupEditProfile);
 }
 
 function openAddCardPopup() {
-  const popupForm = popupAddCard.querySelector(`${validationConfig.formSelector}`);
-
-  popupForm.reset();
+  formAddCard.reset();
   formAddCardValidator.resetFormValidation();
 
   openPopup(popupAddCard);

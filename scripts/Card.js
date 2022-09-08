@@ -42,7 +42,8 @@ export class Card {
 
 
   _removeCard() {
-    this._cardTrash.closest('.element').remove();
+    this._cardElement.remove();
+    this._cardElement = null;
   }
 
   
