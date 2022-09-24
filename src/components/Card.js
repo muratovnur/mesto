@@ -1,15 +1,13 @@
-import { inspectImage } from "./index.js";
-
-
-export class Card {
+export default class Card {
   _cardElement
   _cardTitle
   _cardImage
   _cardLike
-  _cardTrash
-  constructor(cardName, cardLink, cardTemplate) {
+  _cardRemove
+  constructor(cardName, cardLink, { handleCardClick }, cardTemplate) {
     this._cardName = cardName;
     this._cardLink = cardLink;
+    this._handleCardClick = handleCardClick;
     this._cardTemplate = cardTemplate;
   }
 
@@ -25,14 +23,14 @@ export class Card {
     this._cardTitle = this._cardElement.querySelector('.element__title');
     this._cardImage = this._cardElement.querySelector('.element__image');
     this._cardLike = this._cardElement.querySelector('.element__like');
-    this._cardTrash = this._cardElement.querySelector('.element__trash');
+    this._cardRemove = this._cardElement.querySelector('.element__remove');
   }
 
 
   _setEventListeners() {
     this._cardLike.addEventListener('click', () => this._toggleLikeButton());
-    this._cardTrash.addEventListener('click', (evt) => this._removeCard());
-    this._cardImage.addEventListener('click', () => inspectImage(this._cardName, this._cardLink));
+    this._cardRemove.addEventListener('click', (evt) => this._removeCard());
+    this._cardImage.addEventListener('click', (evt) => this._handleCardClick());
   }
 
 

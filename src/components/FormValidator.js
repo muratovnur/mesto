@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   _formInputList
   _buttonSubmitElement
   constructor(validationConfig, formElement) {
