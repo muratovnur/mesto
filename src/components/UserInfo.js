@@ -6,8 +6,8 @@ export default class UserInfo {
   
 
   getUserInfo() {
-    return { profileName: this._profileName.textContent, 
-             profileInfo: this._profileInfo.textContent };
+    return { "input-profile-name": this._profileName.textContent, 
+             "input-profile-info": this._profileInfo.textContent};
   }
 
 
