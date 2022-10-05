@@ -12,13 +12,15 @@
 
   <main class="content">
     <section class="profile">
-      <img src="<%=require("./images/avatar.png")%>" alt="Аватар профиля" class="profile__avatar">
+      
+      <button type="button" class="profile__update-avatar"><img alt="Аватар профиля" class="profile__avatar"></button>
+      
       <div class="profile__info">
         <div class="profile__name-wrapper">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button type="button" class="profile__button profile__edit-btn"></button>
         </div>
-        <p class="profile__about-self">Исследователь океана</p>
+        <p class="profile__about-self"></p>
       </div>
       <button type="button" class="profile__button profile__add-btn"></button>
     </section>
@@ -30,7 +32,10 @@
           <button type="button" class="element__remove"></button>
           <div class="element__title-wrapper">
             <h2 class="element__title"></h2>
-            <button type="button" class="element__like"></button>
+            <div class="element__like-wrapper">
+              <button type="button" class="element__like"></button>
+              <p class="element__like-number">1</p>
+            </div>
           </div>
         </div>
       </template>
@@ -74,6 +79,30 @@
         <input type="submit" class="form__submit" value="Создать">
       </form>
       <button type="button" class="popup__close-btn popup__close-btn_form_add-card"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_update-avatar">
+    <div class="popup__container">
+      <form name="form-update-avatar" class="form form_type_update-avatar" novalidate>
+        <h2 class="form__title">Обновить аватар</h2>
+        <label class="form__field">
+          <input id="avatar-link-input" type="url" name="input-avatar-link" class="form__input form__input_field_avatar-link" placeholder="Ссылка на изображение" required autofocus>
+          <span class="avatar-link-input-error form__input-error"></span>
+        </label>
+        <input type="submit" class="form__submit" value="Сохранить">
+      </form>
+      <button type="button" class="popup__close-btn popup__close-btn_form_update-avatar"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_remove-card">
+    <div class="popup__container">
+      <form name="form-remove-card" class="form form_type_remove-card" novalidate>
+        <h2 class="form__title form__title_type_remove-card">Вы уверены?</h2>
+        <input type="submit" class="form__submit" value="Да">
+      </form>
+      <button type="button" class="popup__close-btn popup__close-btn_form_remove-card"></button>
     </div>
   </div>
 

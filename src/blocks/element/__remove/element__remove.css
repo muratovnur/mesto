@@ -12,6 +12,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  display: none;
 }
 
 .element__remove:hover {

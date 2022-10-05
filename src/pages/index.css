@@ -11,6 +11,7 @@
 @import url("../blocks/profile/profile.css");
 @import url("../blocks/profile/__about-self/profile__about-self.css");
 @import url("../blocks/profile/__add-btn/profile__add-btn.css");
+@import url("../blocks/profile/__update-avatar/profile__update-avatar.css");
 @import url("../blocks/profile/__avatar/profile__avatar.css");
 @import url("../blocks/profile/__edit-btn/profile__edit-btn.css");
 @import url("../blocks/profile/__info/profile__info.css");
@@ -23,9 +24,12 @@
 @import url("../blocks/element/__image/element__image.css");
 @import url("../blocks/element/__title-wrapper/element__title-wrapper.css");
 @import url("../blocks/element/__title/element__title.css");
+@import url("../blocks/element/__like-wrapper/element__like-wrapper.css");
 @import url("../blocks/element/__like/element__like.css");
+@import url("../blocks/element/__like-number/element__like-number.css");
 @import url("../blocks/element/__like/_active/element__like_active.css");
 @import url("../blocks/element/__remove/element__remove.css");
+@import url("../blocks/element/__remove/_active/element__remove_active.css");
 
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__copyright/footer__copyright.css");
@@ -41,6 +45,7 @@
 
 @import url("../blocks/form/form.css");
 @import url("../blocks/form/__title/form__title.css");
+@import url("../blocks/form/__title/_type/form__title_type_remove-card.css");
 @import url("../blocks/form/__input/form__input.css");
 @import url("../blocks/form/__input/_type/form__input_type_error.css");
 @import url("../blocks/form/__submit/form__submit.css");

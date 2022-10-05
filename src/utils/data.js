@@ -1,31 +1,3 @@
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-
 export const validationConfig = {
   formSelector: '.form',
   inputSelector: '.form__input',
@@ -33,4 +5,9 @@ export const validationConfig = {
   inactiveButtonClass: 'form__submit_inactive',
   inputErrorClass: 'form__input_type_error',
   errorClass: 'form__input-error_active'
+}
+
+export const requestInfo = {
+  token: 'c047c541-94af-4cf6-ab69-45316014bf8a',
+  cohortId: 'cohort-51'
 }
