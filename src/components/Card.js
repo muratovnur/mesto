@@ -31,6 +31,13 @@ export default class Card {
     this._cardElement = null;
   }
 
+  
+  updateLike(res) {
+    this.likes = res.likes;
+    this.cardLike.classList.toggle('element__like_active');
+    this.cardLikeNumber.textContent = res.likes.length;
+  }
+
 
   _createElementByTemplate() {
     this._cardElement = document.querySelector(this._cardTemplate).content

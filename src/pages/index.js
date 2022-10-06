@@ -30,9 +30,7 @@ function createCard(cardData) {
     handleCardLike: (card) => {
       api.updateCardLike(card, card.isLiked())
       .then(res => {
-        card.likes = res.likes;
-        card.cardLike.classList.toggle('element__like_active');
-        card.cardLikeNumber.textContent = res.likes.length;
+        card.updateLike(res);
       })
       .catch(err => {
         console.log(err);
@@ -113,13 +111,13 @@ const popupEditProfile = new PopupWithForm('.popup_type_edit-profile', (formData
     popupEditProfile.formSubmitButton.value = "Сохранение...";
     api.updateUserInfo(formData["input-profile-name"], formData["input-profile-info"])
     .then((data) => {
-      userInfo.setUserInfo(data.name, data.about)
+      userInfo.setUserInfo(data.name, data.about);
+      popupEditProfile.close();
     })
     .catch(err => {
       console.log(err);
     })
     .finally(() => {
-      popupEditProfile.close();
       popupEditProfile.formSubmitButton.value = "Сохранить";
     })
   }, '.form_type_edit-profile', '.form__input', '.form__submit');
@@ -130,12 +128,12 @@ const popupAddCard = new PopupWithForm('.popup_type_add-card', (formData) => {
     api.addCard(formData["input-card-name"], formData["input-card-link"])
     .then((data) => {
       cardsList.renderNewItem(data, true);
+      popupAddCard.close();
     })
     .catch(err => {
       console.log(err);
     })
     .finally(() => {
-      popupAddCard.close();
       popupAddCard.formSubmitButton.value = "Создать";
     })
   }, '.form_type_add-card', '.form__input', '.form__submit');
@@ -145,13 +143,13 @@ const popupUpdateAvatar = new PopupWithForm('.popup_type_update-avatar', (formDa
     popupUpdateAvatar.formSubmitButton.value = "Сохранение...";
     api.updateUserAvatar(formData["input-avatar-link"])
     .then((data) => {
-      userInfo.updateUserAvatar(data.avatar)
+      userInfo.updateUserAvatar(data.avatar);
+      popupUpdateAvatar.close();
     })
     .catch(err => {
       console.log(err);
     })
     .finally(() => {
-      popupUpdateAvatar.close();
       popupUpdateAvatar.formSubmitButton.value = "Сохранить";
     })
   }, '.form_type_update-avatar', '.form__input', '.form__submit')
@@ -164,12 +162,10 @@ const popupRemoveCard = new PopupWithConfirmation('.popup_type_remove-card', (ca
       api.removeCard(card)
       .then(() => {
         card.removeCard();
+        popupRemoveCard.close();
       })
       .catch(err => {
         console.log(err);
-      })
-      .finally(() => {
-        popupRemoveCard.close();
       })
   }, '.form_type_remove-card');
 
